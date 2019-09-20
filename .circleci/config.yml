@@ -8,7 +8,7 @@ jobs:
       - checkout
       
       - run:
-          name: build dependencies
+          name: build dependencies +1
           command: bundle install
 
       - run:
