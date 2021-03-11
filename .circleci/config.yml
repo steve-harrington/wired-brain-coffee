@@ -12,9 +12,13 @@ jobs:
           command: bundle install
 
       - run:
-          name: build the jekyll site
-          command: bundle exec jekyll build
-
+          name: Greeting
+          command: echo Welcome BrewMaster!
+          
       - run:
           name: Print the Current Time
           command: date
+       
+       - run:
+          name: build the jekyll site
+          command: bundle exec jekyll build
