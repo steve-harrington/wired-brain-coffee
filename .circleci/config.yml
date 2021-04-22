@@ -8,6 +8,10 @@ jobs:
       - checkout
       
       - run:
+          name: Be social
+          command: echo "Hello!"
+      
+      - run:
           name: build dependencies
           command: bundle install
 
