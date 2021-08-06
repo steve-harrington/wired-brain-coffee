@@ -1,20 +1,14 @@
-version: 2
-jobs:
-  build:
-    docker:
-      - image: circleci/ruby:2.4.1-node-browsers
+# This config is equivalent to both the '.circleci/extended/orb-free.yml' and the base '.circleci/config.yml'
+version: 2.1
 
-    steps:
-      - checkout
-      
-      - run:
-          name: build dependencies
-          command: bundle install
+orbs:
+  node: circleci/node@4.1
 
-      - run:
-          name: build the jekyll site
-          command: bundle exec jekyll build
-
-      - run:
-          name: Print the Current Time
-          command: date
+workflows:
+  sample:
+    jobs:
+      - node/test:
+          version: '15.1'
+          # This is the node version to use for the `cimg/node` tag
+          # Relevant tags can be found on the CircleCI Developer Hub
+          # https://circleci.com/developer/images/image/cimg/node
