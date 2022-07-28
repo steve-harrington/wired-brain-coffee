@@ -15,12 +15,16 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+          name: "build dependencies"
+          command: "bundle install"
+      - run:
+          name: "build jekyll"
+          command: "bundle exec jekyll build"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
   say-hello-workflow:
     jobs:
-      - say-hello
+      - build-jekyll
+      - build-dependencies
