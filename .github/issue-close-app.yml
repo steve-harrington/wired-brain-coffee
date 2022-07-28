@@ -1,4 +1,5 @@
 # Comment that will be sent if an issue is judged to be closed
+# https://probot.github.io/apps/close-issue-app/
 comment: "This issue is closed because it does not meet our issue template. Please read it."
 issueConfigs:
 # There can be several configs for different kind of issues.
