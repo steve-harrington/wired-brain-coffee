@@ -6,7 +6,6 @@ jobs:
 
     steps:
       - checkout
-       # Just a comment
       - run:
           name: build dependencies
           command: bundle install
